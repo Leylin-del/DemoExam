@@ -63,6 +63,7 @@
             // buttonAscending
             // 
             buttonAscending.AutoSize = true;
+            buttonAscending.Checked = true;
             buttonAscending.Location = new Point(140, 38);
             buttonAscending.Name = "buttonAscending";
             buttonAscending.Size = new Size(116, 19);
@@ -74,10 +75,12 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.IndianRed;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 211);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 227);
+            dataGridView1.Size = new Size(985, 259);
             dataGridView1.TabIndex = 3;
             // 
             // filterButton
@@ -93,6 +96,7 @@
             // 
             sortListBox.FormattingEnabled = true;
             sortListBox.ItemHeight = 15;
+            sortListBox.Items.AddRange(new object[] { "Клиент", "Дата заказа", "Статус" });
             sortListBox.Location = new Point(6, 22);
             sortListBox.Name = "sortListBox";
             sortListBox.Size = new Size(120, 94);
@@ -140,7 +144,6 @@
             buttonDescending.Name = "buttonDescending";
             buttonDescending.Size = new Size(102, 19);
             buttonDescending.TabIndex = 11;
-            buttonDescending.TabStop = true;
             buttonDescending.Text = "По убыванию";
             buttonDescending.UseVisualStyleBackColor = true;
             // 
@@ -160,7 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1009, 482);
             Controls.Add(groupBox1);
             Controls.Add(searchButton);
             Controls.Add(showAllButton);
@@ -170,6 +173,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(searchTextBox);
             Controls.Add(listClients);
+            MinimumSize = new Size(640, 480);
             Name = "workOrder";
             Text = "Работа с заказами";
             Load += workOrder_Load;
